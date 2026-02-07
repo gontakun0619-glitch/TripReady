@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TripReady - 渡航準備を1画面で</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- ヘッダー -->
+        <header class="header">
+            <h1>✈️ TripReady</h1>
+            <p class="tagline">渡航前のモヤモヤを1画面に整理</p>
+        </header>
+
+        <!-- 国選択 -->
+        <div class="country-selector">
+            <label for="country">渡航先を選択</label>
+            <select id="country" class="country-select">
+                <option value="">--- 国/都市を選んでください ---</option>
+                <option value="thailand">タイ / バンコク</option>
+                <option value="korea">韓国 / ソウル</option>
+                <option value="usa">アメリカ / ニューヨーク</option>
+            </select>
+        </div>
+
+        <!-- メインコンテンツ -->
+        <main id="main-content" class="hidden">
+            <!-- 5つのカード -->
+            <div class="cards-grid">
+                <!-- 1. 配車 -->
+                <div class="card">
+                    <div class="card-icon">🚗</div>
+                    <h3>配車</h3>
+                    <div id="card-transport" class="card-content">
+                        <p class="loading">読み込み中...</p>
+                    </div>
+                </div>
+
+                <!-- 2. デリバリー -->
+                <div class="card">
+                    <div class="card-icon">🍔</div>
+                    <h3>デリバリー</h3>
+                    <div id="card-delivery" class="card-content">
+                        <p class="loading">読み込み中...</p>
+                    </div>
+                </div>
+
+                <!-- 3. 決済 -->
+                <div class="card">
+                    <div class="card-icon">💳</div>
+                    <h3>決済</h3>
+                    <div id="card-payment" class="card-content">
+                        <p class="loading">読み込み中...</p>
+                    </div>
+                </div>
+
+                <!-- 4. 翻訳 -->
+                <div class="card">
+                    <div class="card-icon">🗣️</div>
+                    <h3>翻訳</h3>
+                    <div id="card-translation" class="card-content">
+                        <p class="loading">読み込み中...</p>
+                    </div>
+                </div>
+
+                <!-- 5. 通貨 -->
+                <div class="card">
+                    <div class="card-icon">💰</div>
+                    <h3>通貨</h3>
+                    <div id="card-currency" class="card-content">
+                        <p class="loading">読み込み中...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- 緊急ボタン -->
+            <div class="emergency-section">
+                <h2 class="emergency-title">🚨 緊急連絡先</h2>
+                <div class="emergency-buttons">
+                    <a href="#" id="btn-police" class="emergency-btn emergency-btn-police">
+                        <span class="emergency-icon">🚓</span>
+                        <span class="emergency-text">警察</span>
+                    </a>
+                    <a href="#" id="btn-ambulance" class="emergency-btn emergency-btn-ambulance">
+                        <span class="emergency-icon">🚑</span>
+                        <span class="emergency-text">救急</span>
+                    </a>
+                    <a href="#" id="btn-embassy" class="emergency-btn emergency-btn-embassy">
+                        <span class="emergency-icon">🏛️</span>
+                        <span class="emergency-text">大使館</span>
+                    </a>
+                </div>
+            </div>
+        </main>
+
+        <!-- フッター -->
+        <footer class="footer">
+            <p>※情報は参考です。最終確認は公式サイトで行ってください。</p>
+        </footer>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
