@@ -8,13 +8,11 @@
 </head>
 <body>
     <div class="container">
-        <!-- ヘッダー -->
         <header class="header">
             <h1>✈️ TripReady</h1>
             <p class="tagline">渡航前のモヤモヤを1画面に整理</p>
         </header>
 
-        <!-- 国選択 -->
         <div class="country-selector">
             <label for="country">渡航先を選択</label>
             <select id="country" class="country-select">
@@ -30,11 +28,8 @@
             </select>
         </div>
 
-        <!-- メインコンテンツ -->
         <main id="main-content" class="hidden">
-            <!-- 6つのカード -->
             <div class="cards-grid">
-                <!-- 1. 配車 -->
                 <div class="card accordion-card" data-card="transport">
                     <div class="card-header">
                         <div class="card-header-left">
@@ -46,21 +41,16 @@
                         </div>
                         <div class="accordion-icon">▶︎</div>
                     </div>
-                    
-                    <!-- 基本情報 -->
                     <div class="card-detail" id="detail-transport">
                         <div class="basic-info" id="basic-transport">
                             <p class="loading">読み込み中...</p>
                         </div>
-                        
-                        <!-- 詳細情報（最初は非表示） -->
                         <div class="detailed-info hidden" id="detailed-transport">
                             <p class="loading">読み込み中...</p>
                         </div>
                     </div>
                 </div>
 
-                <!-- 2. デリバリー -->
                 <div class="card accordion-card" data-card="delivery">
                     <div class="card-header">
                         <div class="card-header-left">
@@ -73,11 +63,15 @@
                         <div class="accordion-icon">▶︎</div>
                     </div>
                     <div class="card-detail" id="detail-delivery">
-                        <p class="loading">読み込み中...</p>
+                        <div class="basic-info" id="basic-delivery">
+                            <p class="loading">読み込み中...</p>
+                        </div>
+                        <div class="detailed-info hidden" id="detailed-delivery">
+                            <p class="loading">読み込み中...</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 3. 決済 -->
                 <div class="card accordion-card" data-card="payment">
                     <div class="card-header">
                         <div class="card-header-left">
@@ -90,11 +84,15 @@
                         <div class="accordion-icon">▶︎</div>
                     </div>
                     <div class="card-detail" id="detail-payment">
-                        <p class="loading">読み込み中...</p>
+                        <div class="basic-info" id="basic-payment">
+                            <p class="loading">読み込み中...</p>
+                        </div>
+                        <div class="detailed-info hidden" id="detailed-payment">
+                            <p class="loading">読み込み中...</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 4. 翻訳 -->
                 <div class="card accordion-card" data-card="translation">
                     <div class="card-header">
                         <div class="card-header-left">
@@ -107,11 +105,15 @@
                         <div class="accordion-icon">▶︎</div>
                     </div>
                     <div class="card-detail" id="detail-translation">
-                        <p class="loading">読み込み中...</p>
+                        <div class="basic-info" id="basic-translation">
+                            <p class="loading">読み込み中...</p>
+                        </div>
+                        <div class="detailed-info hidden" id="detailed-translation">
+                            <p class="loading">読み込み中...</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 5. 通貨 -->
                 <div class="card accordion-card" data-card="currency">
                     <div class="card-header">
                         <div class="card-header-left">
@@ -124,11 +126,15 @@
                         <div class="accordion-icon">▶︎</div>
                     </div>
                     <div class="card-detail" id="detail-currency">
-                        <p class="loading">読み込み中...</p>
+                        <div class="basic-info" id="basic-currency">
+                            <p class="loading">読み込み中...</p>
+                        </div>
+                        <div class="detailed-info hidden" id="detailed-currency">
+                            <p class="loading">読み込み中...</p>
+                        </div>
                     </div>
                 </div>
 
-                <!-- 6. SIM・通信 -->
                 <div class="card accordion-card" data-card="sim">
                     <div class="card-header">
                         <div class="card-header-left">
@@ -141,12 +147,16 @@
                         <div class="accordion-icon">▶︎</div>
                     </div>
                     <div class="card-detail" id="detail-sim">
-                        <p class="loading">読み込み中...</p>
+                        <div class="basic-info" id="basic-sim">
+                            <p class="loading">読み込み中...</p>
+                        </div>
+                        <div class="detailed-info hidden" id="detailed-sim">
+                            <p class="loading">読み込み中...</p>
+                        </div>
                     </div>
                 </div>
             </div>
 
-            <!-- 緊急ボタン -->
             <div class="emergency-section">
                 <h2 class="emergency-title">🚨 緊急連絡先</h2>
                 <div class="emergency-buttons">
@@ -166,7 +176,6 @@
             </div>
         </main>
 
-        <!-- フッター -->
         <footer class="footer">
             <p>※情報は参考です。最終確認は公式サイトで行ってください。</p>
         </footer>
