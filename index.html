@@ -19,15 +19,20 @@
             <label for="country">渡航先を選択</label>
             <select id="country" class="country-select">
                 <option value="">--- 国/都市を選んでください ---</option>
-                <option value="thailand">タイ / バンコク</option>
-                <option value="korea">韓国 / ソウル</option>
-                <option value="usa">アメリカ / ニューヨーク</option>
+                <option value="thailand">🇹🇭 タイ / バンコク</option>
+                <option value="korea">🇰🇷 韓国 / ソウル</option>
+                <option value="usa">🇺🇸 アメリカ / ニューヨーク</option>
+                <option value="taiwan">🇹🇼 台湾 / 台北</option>
+                <option value="vietnam">🇻🇳 ベトナム / ホーチミン</option>
+                <option value="singapore">🇸🇬 シンガポール</option>
+                <option value="philippines">🇵🇭 フィリピン / マニラ</option>
+                <option value="malaysia">🇲🇾 マレーシア / クアラルンプール</option>
             </select>
         </div>
 
         <!-- メインコンテンツ -->
         <main id="main-content" class="hidden">
-            <!-- 5つのカード（アコーディオン） -->
+            <!-- 6つのカード -->
             <div class="cards-grid">
                 <!-- 1. 配車 -->
                 <div class="card accordion-card" data-card="transport">
@@ -110,6 +115,23 @@
                         <div class="accordion-icon">▶︎</div>
                     </div>
                     <div class="card-detail" id="detail-currency">
+                        <p class="loading">読み込み中...</p>
+                    </div>
+                </div>
+
+                <!-- 6. SIM・通信 -->
+                <div class="card accordion-card" data-card="sim">
+                    <div class="card-header">
+                        <div class="card-header-left">
+                            <div class="card-icon">📱</div>
+                            <div>
+                                <h3>SIM・通信</h3>
+                                <p class="card-summary" id="summary-sim">読み込み中...</p>
+                            </div>
+                        </div>
+                        <div class="accordion-icon">▶︎</div>
+                    </div>
+                    <div class="card-detail" id="detail-sim">
                         <p class="loading">読み込み中...</p>
                     </div>
                 </div>
