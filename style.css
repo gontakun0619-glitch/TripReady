@@ -9,8 +9,10 @@ body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Noto Sans JP", sans-serif;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
-    padding: 16px;
+    padding: 20px 16px;
     color: #333;
+    line-height: 1.7;
+    font-size: 16px;
 }
 
 .container {
@@ -22,57 +24,61 @@ body {
 .header {
     text-align: center;
     color: white;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
 .header h1 {
-    font-size: 32px;
+    font-size: 36px;
     font-weight: 700;
     margin-bottom: 8px;
+    letter-spacing: 0.5px;
 }
 
 .tagline {
-    font-size: 14px;
-    opacity: 0.9;
+    font-size: 15px;
+    opacity: 0.95;
+    font-weight: 400;
 }
 
 /* 国選択 */
 .country-selector {
     background: white;
-    padding: 20px;
-    border-radius: 16px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    margin-bottom: 24px;
+    padding: 24px;
+    border-radius: 20px;
+    box-shadow: 0 2px 16px rgba(0, 0, 0, 0.08);
+    margin-bottom: 32px;
 }
 
 .country-selector label {
     display: block;
-    font-size: 14px;
+    font-size: 15px;
     font-weight: 600;
-    margin-bottom: 8px;
-    color: #555;
+    margin-bottom: 12px;
+    color: #444;
 }
 
 .country-select {
     width: 100%;
-    padding: 14px 16px;
+    padding: 16px 18px;
     font-size: 16px;
-    border: 2px solid #e0e0e0;
-    border-radius: 12px;
+    border: 2px solid #e8e8e8;
+    border-radius: 14px;
     background: white;
     color: #333;
     cursor: pointer;
-    transition: border-color 0.3s;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .country-select:focus {
     outline: none;
     border-color: #667eea;
+    box-shadow: 0 0 0 4px rgba(102, 126, 234, 0.1);
 }
 
 /* メインコンテンツ */
 #main-content {
-    animation: fadeIn 0.5s ease-in;
+    animation: fadeIn 0.4s ease-in;
 }
 
 #main-content.hidden {
@@ -82,7 +88,7 @@ body {
 @keyframes fadeIn {
     from {
         opacity: 0;
-        transform: translateY(10px);
+        transform: translateY(12px);
     }
     to {
         opacity: 1;
@@ -94,81 +100,156 @@ body {
 .cards-grid {
     display: grid;
     gap: 16px;
-    margin-bottom: 24px;
+    margin-bottom: 32px;
 }
 
-/* カード */
+/* カード（アコーディオン） */
 .card {
     background: white;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s, box-shadow 0.2s;
+    border-radius: 20px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+    transition: all 0.3s ease;
 }
 
-.card:active {
+.accordion-card {
+    cursor: pointer;
+}
+
+.accordion-card:active {
     transform: scale(0.98);
 }
 
+/* カードヘッダー */
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 22px;
+    min-height: 88px;
+}
+
+.card-header-left {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    flex: 1;
+}
+
 .card-icon {
-    font-size: 32px;
-    margin-bottom: 8px;
+    font-size: 36px;
+    line-height: 1;
+    flex-shrink: 0;
 }
 
 .card h3 {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 700;
-    margin-bottom: 12px;
-    color: #333;
-}
-
-.card-content {
-    font-size: 14px;
-    line-height: 1.6;
-    color: #555;
-}
-
-.card-content .app-name {
-    font-weight: 700;
-    color: #667eea;
-    font-size: 16px;
-    display: block;
     margin-bottom: 4px;
+    color: #222;
+    letter-spacing: 0.3px;
 }
 
-.card-content .detail {
-    margin: 4px 0;
-}
-
-.card-content .highlight {
-    background: #f0f4ff;
-    padding: 8px 12px;
-    border-radius: 8px;
-    margin-top: 8px;
-    font-weight: 600;
+.card-summary {
+    font-size: 15px;
     color: #667eea;
+    font-weight: 600;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* アコーディオンアイコン */
+.accordion-icon {
+    font-size: 18px;
+    color: #999;
+    transition: transform 0.3s ease;
+    margin-left: 12px;
+    flex-shrink: 0;
+}
+
+.card.active .accordion-icon {
+    transform: rotate(90deg);
+    color: #667eea;
+}
+
+/* カード詳細（アコーディオン本体） */
+.card-detail {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
+    opacity: 0;
+    padding: 0 22px;
+}
+
+.card.active .card-detail {
+    max-height: 600px;
+    opacity: 1;
+    padding: 0 22px 24px 22px;
+    border-top: 1px solid #f0f0f0;
+}
+
+.card-detail .detail-text {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #555;
+    margin-bottom: 12px;
+}
+
+.card-detail .detail-note {
+    font-size: 14px;
+    color: #888;
+    background: #f8f9fa;
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin-top: 12px;
+    line-height: 1.6;
+}
+
+.card-detail .detail-note::before {
+    content: "💡 ";
+}
+
+.card-detail .highlight {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%);
+    padding: 16px 18px;
+    border-radius: 14px;
+    margin: 12px 0;
+    font-weight: 700;
+    color: #667eea;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.card-detail .currency-note {
+    font-size: 13px;
+    color: #999;
+    text-align: center;
+    margin-top: 8px;
 }
 
 .loading {
-    color: #999;
+    color: #bbb;
     font-style: italic;
+    font-size: 14px;
 }
 
 /* 緊急セクション */
 .emergency-section {
     background: white;
-    border-radius: 16px;
-    padding: 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    margin-bottom: 24px;
+    border-radius: 20px;
+    padding: 28px 24px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    margin-bottom: 32px;
 }
 
 .emergency-title {
-    font-size: 18px;
+    font-size: 19px;
     font-weight: 700;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
     text-align: center;
     color: #d32f2f;
+    letter-spacing: 0.3px;
 }
 
 .emergency-buttons {
@@ -182,11 +263,12 @@ body {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    padding: 16px 8px;
-    border-radius: 12px;
+    padding: 20px 12px;
+    border-radius: 16px;
     text-decoration: none;
-    transition: transform 0.2s, box-shadow 0.2s;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    min-height: 96px;
 }
 
 .emergency-btn:active {
@@ -194,53 +276,74 @@ body {
 }
 
 .emergency-btn-police {
-    background: #1976d2;
+    background: linear-gradient(135deg, #1976d2 0%, #1565c0 100%);
 }
 
 .emergency-btn-ambulance {
-    background: #d32f2f;
+    background: linear-gradient(135deg, #d32f2f 0%, #c62828 100%);
 }
 
 .emergency-btn-embassy {
-    background: #388e3c;
+    background: linear-gradient(135deg, #388e3c 0%, #2e7d32 100%);
 }
 
 .emergency-icon {
-    font-size: 28px;
-    margin-bottom: 4px;
+    font-size: 32px;
+    margin-bottom: 8px;
 }
 
 .emergency-text {
     color: white;
-    font-size: 13px;
+    font-size: 14px;
     font-weight: 600;
+    letter-spacing: 0.3px;
 }
 
 /* フッター */
 .footer {
     text-align: center;
     color: white;
-    font-size: 12px;
-    opacity: 0.8;
-    padding: 16px;
+    font-size: 13px;
+    opacity: 0.85;
+    padding: 20px 16px;
+    line-height: 1.6;
 }
 
 /* タブレット以上 */
 @media (min-width: 768px) {
     body {
-        padding: 32px;
+        padding: 40px 32px;
+        font-size: 17px;
     }
 
     .header h1 {
-        font-size: 40px;
+        font-size: 44px;
+    }
+
+    .tagline {
+        font-size: 16px;
     }
 
     .cards-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .card h3 {
+        font-size: 20px;
+    }
+
+    .card-summary {
+        font-size: 16px;
     }
 
     .emergency-buttons {
-        max-width: 400px;
+        max-width: 440px;
         margin: 0 auto;
+        gap: 16px;
+    }
+
+    .emergency-btn {
+        padding: 24px 16px;
     }
 }
