@@ -179,13 +179,206 @@ body {
     transition: max-height 0.4s ease, opacity 0.3s ease, padding 0.3s ease;
     opacity: 0;
     padding: 0 22px;
+    position: relative;
 }
 
 .card.active .card-detail {
-    max-height: 600px;
+    max-height: 1200px;
     opacity: 1;
     padding: 0 22px 24px 22px;
     border-top: 1px solid #f0f0f0;
+}
+
+/* 基本情報 */
+.basic-info {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.basic-info.fade-out {
+    opacity: 0;
+    transform: translateX(-20px) scale(0.95);
+    pointer-events: none;
+}
+
+.basic-info .info-item {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 12px 0;
+    font-size: 15px;
+    color: #555;
+}
+
+.basic-info .info-item::before {
+    content: "✓";
+    color: #667eea;
+    font-weight: bold;
+    font-size: 16px;
+}
+
+/* もっと詳しくボタン */
+.more-detail-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 16px;
+    padding: 12px 24px;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+.more-detail-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(102, 126, 234, 0.4);
+}
+
+.more-detail-btn:active {
+    transform: translateY(0);
+}
+
+.more-detail-btn .arrow {
+    transition: transform 0.3s ease;
+}
+
+.more-detail-btn:hover .arrow {
+    transform: translateX(4px);
+}
+
+/* 詳細情報 */
+.detailed-info {
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.detailed-info.hidden {
+    display: none;
+    opacity: 0;
+    transform: translateX(20px) scale(0.95);
+}
+
+.detailed-info.fade-in {
+    display: block;
+    opacity: 1;
+    transform: translateX(0) scale(1);
+}
+
+/* 詳細セクション */
+.detail-section {
+    margin-bottom: 24px;
+}
+
+.detail-section:last-child {
+    margin-bottom: 0;
+}
+
+.section-title {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 17px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid #f0f0f0;
+}
+
+.section-title .icon {
+    font-size: 20px;
+}
+
+.section-content {
+    font-size: 15px;
+    line-height: 1.75;
+    color: #555;
+}
+
+.section-content ul {
+    list-style: none;
+    padding: 0;
+}
+
+.section-content li {
+    padding: 6px 0;
+    padding-left: 20px;
+    position: relative;
+}
+
+.section-content li::before {
+    content: "•";
+    position: absolute;
+    left: 6px;
+    color: #667eea;
+    font-weight: bold;
+}
+
+.section-content .highlight {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%);
+    padding: 12px 16px;
+    border-radius: 12px;
+    margin: 8px 0;
+    font-weight: 600;
+    color: #667eea;
+}
+
+/* 戻るボタン */
+.back-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-top: 20px;
+    padding: 10px 20px;
+    background: #f5f5f5;
+    color: #666;
+    border: none;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.back-btn:hover {
+    background: #e8e8e8;
+    color: #333;
+}
+
+.back-btn:active {
+    transform: scale(0.98);
+}
+
+.back-btn .arrow {
+    transition: transform 0.3s ease;
+}
+
+.back-btn:hover .arrow {
+    transform: translateX(-4px);
+}
+
+/* 通貨カード用のスタイル */
+.card-detail .highlight {
+    background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%);
+    padding: 16px 18px;
+    border-radius: 14px;
+    margin: 12px 0;
+    font-weight: 700;
+    color: #667eea;
+    font-size: 20px;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.card-detail .currency-note {
+    font-size: 13px;
+    color: #999;
+    text-align: center;
+    margin-top: 8px;
 }
 
 .card-detail .detail-text {
@@ -207,25 +400,6 @@ body {
 
 .card-detail .detail-note::before {
     content: "💡 ";
-}
-
-.card-detail .highlight {
-    background: linear-gradient(135deg, #f0f4ff 0%, #e8edff 100%);
-    padding: 16px 18px;
-    border-radius: 14px;
-    margin: 12px 0;
-    font-weight: 700;
-    color: #667eea;
-    font-size: 20px;
-    text-align: center;
-    letter-spacing: 0.5px;
-}
-
-.card-detail .currency-note {
-    font-size: 13px;
-    color: #999;
-    text-align: center;
-    margin-top: 8px;
 }
 
 .loading {
