@@ -1,11 +1,61 @@
-// サンプルデータ
+// サンプルデータ（配車カードのみ詳細データ追加）
 const countryData = {
     thailand: {
         name: "タイ / バンコク",
         transport: {
             summary: "Grab",
-            details: "東南アジアで主流の配車アプリ。空港から市内まで約300-500バーツ（約1,200-2,000円）。タクシーよりも料金が明確で安心。",
-            note: "Boltも利用可能です"
+            basic: {
+                items: [
+                    "空港→市内：300-500バーツ",
+                    "支払い：現金/カード",
+                    "チップ：不要"
+                ]
+            },
+            detail: {
+                appInfo: {
+                    title: "アプリ情報",
+                    icon: "📱",
+                    content: "Grab（iPhone/Android対応）<br>東南アジアで最も普及している配車アプリ"
+                },
+                pricing: {
+                    title: "料金目安",
+                    icon: "💰",
+                    items: [
+                        "空港→市内：300-500バーツ（約1,200-2,000円）",
+                        "市内移動：50-150バーツ（約200-600円）",
+                        "ピーク時：通常料金の1.5倍程度"
+                    ]
+                },
+                payment: {
+                    title: "支払い方法",
+                    icon: "💳",
+                    items: [
+                        "現金（バーツ）",
+                        "クレジットカード",
+                        "Grabウォレット（アプリ内決済）"
+                    ]
+                },
+                howTo: {
+                    title: "使い方",
+                    icon: "📍",
+                    items: [
+                        "アプリで目的地を入力",
+                        "ドライバーとマッチング",
+                        "ピックアップ場所で待機",
+                        "乗車して目的地へ"
+                    ]
+                },
+                notes: {
+                    title: "注意点",
+                    icon: "⚠️",
+                    items: [
+                        "渋滞時は予想より時間がかかる",
+                        "チップは基本的に不要",
+                        "空港は3階のピックアップエリアで待機",
+                        "ドライバーに電話がかかってくる場合あり（タイ語）"
+                    ]
+                }
+            }
         },
         delivery: {
             summary: "GrabFood / Foodpanda",
@@ -42,8 +92,55 @@ const countryData = {
         name: "韓国 / ソウル",
         transport: {
             summary: "カカオT（Kakao T）",
-            details: "韓国で最もメジャーな配車アプリ。空港から市内までタクシー約50,000-80,000ウォン。アプリは韓国語がメインですが直感的に使えます。",
-            note: "地下鉄も便利です（T-moneyカード推奨）"
+            basic: {
+                items: [
+                    "空港→市内：50,000-80,000ウォン",
+                    "支払い：現金/カード",
+                    "チップ：不要"
+                ]
+            },
+            detail: {
+                appInfo: {
+                    title: "アプリ情報",
+                    icon: "📱",
+                    content: "カカオT（Kakao T）<br>韓国で最もメジャーな配車アプリ"
+                },
+                pricing: {
+                    title: "料金目安",
+                    icon: "💰",
+                    items: [
+                        "空港→市内：50,000-80,000ウォン（約5,500-9,000円）",
+                        "市内移動：5,000-15,000ウォン（約550-1,650円）"
+                    ]
+                },
+                payment: {
+                    title: "支払い方法",
+                    icon: "💳",
+                    items: [
+                        "現金（ウォン）",
+                        "クレジットカード",
+                        "カカオペイ"
+                    ]
+                },
+                howTo: {
+                    title: "使い方",
+                    icon: "📍",
+                    items: [
+                        "アプリで目的地を入力",
+                        "ドライバーとマッチング",
+                        "乗車"
+                    ]
+                },
+                notes: {
+                    title: "注意点",
+                    icon: "⚠️",
+                    items: [
+                        "アプリは韓国語がメインだが直感的",
+                        "地下鉄（T-moneyカード）も便利",
+                        "チップ不要"
+                    ]
+                }
+            }
         },
         delivery: {
             summary: "배달의민족 / Coupang Eats",
@@ -80,8 +177,57 @@ const countryData = {
         name: "アメリカ / ニューヨーク",
         transport: {
             summary: "Uber / Lyft",
-            details: "両方が主流で使いやすい。空港から市内まで約$50-80（約7,000-11,000円）。黄色いタクシーも有名ですが、アプリの方が料金が明確。",
-            note: "チップ15-20%を忘れずに"
+            basic: {
+                items: [
+                    "空港→市内：$50-80",
+                    "支払い：カード推奨",
+                    "チップ：15-20%"
+                ]
+            },
+            detail: {
+                appInfo: {
+                    title: "アプリ情報",
+                    icon: "📱",
+                    content: "Uber / Lyft（両方が主流）<br>アメリカで最も使われている配車アプリ"
+                },
+                pricing: {
+                    title: "料金目安",
+                    icon: "💰",
+                    items: [
+                        "空港→市内：$50-80（約7,000-11,000円）",
+                        "市内移動：$10-25（約1,400-3,500円）",
+                        "※チップ別途15-20%"
+                    ]
+                },
+                payment: {
+                    title: "支払い方法",
+                    icon: "💳",
+                    items: [
+                        "クレジットカード（推奨）",
+                        "Apple Pay / Google Pay",
+                        "現金（一部対応）"
+                    ]
+                },
+                howTo: {
+                    title: "使い方",
+                    icon: "📍",
+                    items: [
+                        "アプリで目的地を入力",
+                        "車種を選択（UberX、Lyft等）",
+                        "ドライバーとマッチング",
+                        "乗車"
+                    ]
+                },
+                notes: {
+                    title: "注意点",
+                    icon: "⚠️",
+                    items: [
+                        "チップ15-20%を忘れずに",
+                        "黄色いタクシーもあるがアプリが便利",
+                        "ピーク時は料金が高くなる（サージプライシング）"
+                    ]
+                }
+            }
         },
         delivery: {
             summary: "Uber Eats / DoorDash",
@@ -118,8 +264,55 @@ const countryData = {
         name: "台湾 / 台北",
         transport: {
             summary: "台湾大車隊 / Uber",
-            details: "台湾大車隊（タクシー配車）とUberが主流。MRT（地下鉄）が便利で安い。空港から市内まで電車で約150-160台湾ドル（約700円）。",
-            note: "悠遊カード（EasyCard）があると便利"
+            basic: {
+                items: [
+                    "空港→市内：150-160台湾ドル（電車）",
+                    "支払い：現金/カード",
+                    "チップ：不要"
+                ]
+            },
+            detail: {
+                appInfo: {
+                    title: "アプリ情報",
+                    icon: "📱",
+                    content: "台湾大車隊 / Uber<br>MRT（地下鉄）も便利で安い"
+                },
+                pricing: {
+                    title: "料金目安",
+                    icon: "💰",
+                    items: [
+                        "空港→市内（電車）：150-160台湾ドル（約700円）",
+                        "タクシー：400-600台湾ドル（約1,900-2,800円）"
+                    ]
+                },
+                payment: {
+                    title: "支払い方法",
+                    icon: "💳",
+                    items: [
+                        "現金",
+                        "クレジットカード",
+                        "悠遊カード（交通IC）"
+                    ]
+                },
+                howTo: {
+                    title: "使い方",
+                    icon: "📍",
+                    items: [
+                        "アプリで目的地入力",
+                        "ドライバーマッチング",
+                        "乗車"
+                    ]
+                },
+                notes: {
+                    title: "注意点",
+                    icon: "⚠️",
+                    items: [
+                        "悠遊カード（EasyCard）があると便利",
+                        "MRTが安くて速い",
+                        "チップ不要"
+                    ]
+                }
+            }
         },
         delivery: {
             summary: "Foodpanda / Uber Eats",
@@ -156,8 +349,57 @@ const countryData = {
         name: "ベトナム / ホーチミン",
         transport: {
             summary: "Grab",
-            details: "東南アジアで最も普及している配車アプリ。空港から市内まで約150,000-200,000ドン（約900-1,200円）。バイクタクシーもあり。",
-            note: "Grabバイクは渋滞時に便利"
+            basic: {
+                items: [
+                    "空港→市内：150,000-200,000ドン",
+                    "支払い：現金/カード",
+                    "チップ：不要"
+                ]
+            },
+            detail: {
+                appInfo: {
+                    title: "アプリ情報",
+                    icon: "📱",
+                    content: "Grab（東南アジアで最も普及）<br>バイクタクシーも選択可能"
+                },
+                pricing: {
+                    title: "料金目安",
+                    icon: "💰",
+                    items: [
+                        "空港→市内：150,000-200,000ドン（約900-1,200円）",
+                        "市内移動：30,000-80,000ドン（約180-480円）",
+                        "Grabバイク：さらに安い"
+                    ]
+                },
+                payment: {
+                    title: "支払い方法",
+                    icon: "💳",
+                    items: [
+                        "現金（ドン）",
+                        "クレジットカード",
+                        "Grabウォレット"
+                    ]
+                },
+                howTo: {
+                    title: "使い方",
+                    icon: "📍",
+                    items: [
+                        "アプリで目的地入力",
+                        "車種選択（車/バイク）",
+                        "ドライバーマッチング",
+                        "乗車"
+                    ]
+                },
+                notes: {
+                    title: "注意点",
+                    icon: "⚠️",
+                    items: [
+                        "Grabバイクは渋滞時に便利",
+                        "チップ不要",
+                        "現金が確実"
+                    ]
+                }
+            }
         },
         delivery: {
             summary: "GrabFood / ShopeeFood",
@@ -194,8 +436,55 @@ const countryData = {
         name: "シンガポール",
         transport: {
             summary: "Grab / Gojek",
-            details: "GrabとGojekが主流。MRT（地下鉄）が非常に便利で清潔。空港から市内まで電車で約2-3シンガポールドル（約220-330円）。",
-            note: "EZ-Linkカードがあると便利"
+            basic: {
+                items: [
+                    "空港→市内：2-3シンガポールドル（電車）",
+                    "支払い：現金/カード",
+                    "チップ：不要"
+                ]
+            },
+            detail: {
+                appInfo: {
+                    title: "アプリ情報",
+                    icon: "📱",
+                    content: "Grab / Gojek<br>MRT（地下鉄）が便利で清潔"
+                },
+                pricing: {
+                    title: "料金目安",
+                    icon: "💰",
+                    items: [
+                        "空港→市内（電車）：2-3シンガポールドル（約220-330円）",
+                        "タクシー：20-30シンガポールドル（約2,200-3,300円）"
+                    ]
+                },
+                payment: {
+                    title: "支払い方法",
+                    icon: "💳",
+                    items: [
+                        "クレジットカード",
+                        "現金",
+                        "EZ-Linkカード（交通IC）"
+                    ]
+                },
+                howTo: {
+                    title: "使い方",
+                    icon: "📍",
+                    items: [
+                        "アプリで目的地入力",
+                        "ドライバーマッチング",
+                        "乗車"
+                    ]
+                },
+                notes: {
+                    title: "注意点",
+                    icon: "⚠️",
+                    items: [
+                        "EZ-Linkカードがあると便利",
+                        "MRTが清潔で安全",
+                        "チップ不要"
+                    ]
+                }
+            }
         },
         delivery: {
             summary: "GrabFood / Foodpanda",
@@ -232,8 +521,55 @@ const countryData = {
         name: "フィリピン / マニラ",
         transport: {
             summary: "Grab",
-            details: "配車アプリはGrabが主流。渋滞が激しいのでMRT（電車）も選択肢。空港から市内までGrabで約300-500ペソ（約900-1,500円）。",
-            note: "渋滞が激しいので時間に余裕を"
+            basic: {
+                items: [
+                    "空港→市内：300-500ペソ",
+                    "支払い：現金/カード",
+                    "チップ：不要"
+                ]
+            },
+            detail: {
+                appInfo: {
+                    title: "アプリ情報",
+                    icon: "📱",
+                    content: "Grab（配車アプリ主流）<br>MRT（電車）も選択肢"
+                },
+                pricing: {
+                    title: "料金目安",
+                    icon: "💰",
+                    items: [
+                        "空港→市内：300-500ペソ（約900-1,500円）",
+                        "市内移動：100-250ペソ（約300-750円）"
+                    ]
+                },
+                payment: {
+                    title: "支払い方法",
+                    icon: "💳",
+                    items: [
+                        "現金（ペソ）",
+                        "クレジットカード",
+                        "GCash / PayMaya"
+                    ]
+                },
+                howTo: {
+                    title: "使い方",
+                    icon: "📍",
+                    items: [
+                        "アプリで目的地入力",
+                        "ドライバーマッチング",
+                        "乗車"
+                    ]
+                },
+                notes: {
+                    title: "注意点",
+                    icon: "⚠️",
+                    items: [
+                        "渋滞が激しいので時間に余裕を",
+                        "チップ不要",
+                        "英語が通じる"
+                    ]
+                }
+            }
         },
         delivery: {
             summary: "GrabFood / Foodpanda",
@@ -270,8 +606,55 @@ const countryData = {
         name: "マレーシア / クアラルンプール",
         transport: {
             summary: "Grab",
-            details: "Grabが主流。電車（LRT/MRT）も便利で安い。空港から市内までKLIAエクスプレスで約55リンギット（約1,800円）。",
-            note: "Touch 'n Goカードがあると便利"
+            basic: {
+                items: [
+                    "空港→市内：55リンギット（電車）",
+                    "支払い：現金/カード",
+                    "チップ：不要"
+                ]
+            },
+            detail: {
+                appInfo: {
+                    title: "アプリ情報",
+                    icon: "📱",
+                    content: "Grab（主流）<br>電車（LRT/MRT）も便利で安い"
+                },
+                pricing: {
+                    title: "料金目安",
+                    icon: "💰",
+                    items: [
+                        "空港→市内（KLIAエクスプレス）：55リンギット（約1,800円）",
+                        "タクシー：80-120リンギット（約2,600-3,900円）"
+                    ]
+                },
+                payment: {
+                    title: "支払い方法",
+                    icon: "💳",
+                    items: [
+                        "現金",
+                        "クレジットカード",
+                        "Touch 'n Go eWallet"
+                    ]
+                },
+                howTo: {
+                    title: "使い方",
+                    icon: "📍",
+                    items: [
+                        "アプリで目的地入力",
+                        "ドライバーマッチング",
+                        "乗車"
+                    ]
+                },
+                notes: {
+                    title: "注意点",
+                    icon: "⚠️",
+                    items: [
+                        "Touch 'n Goカードがあると便利",
+                        "電車が安くて速い",
+                        "チップ不要"
+                    ]
+                }
+            }
         },
         delivery: {
             summary: "GrabFood / Foodpanda",
@@ -331,11 +714,11 @@ countrySelect.addEventListener('change', function() {
         accordionCards.forEach(card => card.classList.remove('active'));
         
         // カード情報を更新
-        updateAccordionCard('transport', data.transport);
-        updateAccordionCard('delivery', data.delivery);
-        updateAccordionCard('payment', data.payment);
-        updateAccordionCard('translation', data.translation);
-        updateAccordionCard('sim', data.sim);
+        updateTransportCard(data.transport);
+        updateSimpleCard('delivery', data.delivery);
+        updateSimpleCard('payment', data.payment);
+        updateSimpleCard('translation', data.translation);
+        updateSimpleCard('sim', data.sim);
         updateCurrencyCard(data.currency);
         
         // 緊急ボタンを更新
@@ -351,8 +734,133 @@ countrySelect.addEventListener('change', function() {
     }
 });
 
-// アコーディオンカードを更新する関数
-function updateAccordionCard(cardType, data) {
+// 配車カード専用の更新関数（詳細表示対応）
+function updateTransportCard(data) {
+    const summaryEl = document.getElementById('summary-transport');
+    const basicEl = document.getElementById('basic-transport');
+    const detailedEl = document.getElementById('detailed-transport');
+    
+    summaryEl.textContent = data.summary;
+    
+    // 基本情報
+    let basicHTML = '';
+    data.basic.items.forEach(item => {
+        basicHTML += `<div class="info-item">${item}</div>`;
+    });
+    basicHTML += `<button class="more-detail-btn" onclick="showDetailedInfo('transport')">もっと詳しく <span class="arrow">→</span></button>`;
+    basicEl.innerHTML = basicHTML;
+    
+    // 詳細情報
+    let detailHTML = '';
+    
+    // アプリ情報
+    detailHTML += `
+        <div class="detail-section">
+            <div class="section-title">
+                <span class="icon">${data.detail.appInfo.icon}</span>
+                ${data.detail.appInfo.title}
+            </div>
+            <div class="section-content">${data.detail.appInfo.content}</div>
+        </div>
+    `;
+    
+    // 料金目安
+    detailHTML += `
+        <div class="detail-section">
+            <div class="section-title">
+                <span class="icon">${data.detail.pricing.icon}</span>
+                ${data.detail.pricing.title}
+            </div>
+            <div class="section-content">
+                <ul>
+                    ${data.detail.pricing.items.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+    `;
+    
+    // 支払い方法
+    detailHTML += `
+        <div class="detail-section">
+            <div class="section-title">
+                <span class="icon">${data.detail.payment.icon}</span>
+                ${data.detail.payment.title}
+            </div>
+            <div class="section-content">
+                <ul>
+                    ${data.detail.payment.items.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+    `;
+    
+    // 使い方
+    detailHTML += `
+        <div class="detail-section">
+            <div class="section-title">
+                <span class="icon">${data.detail.howTo.icon}</span>
+                ${data.detail.howTo.title}
+            </div>
+            <div class="section-content">
+                <ul>
+                    ${data.detail.howTo.items.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+    `;
+    
+    // 注意点
+    detailHTML += `
+        <div class="detail-section">
+            <div class="section-title">
+                <span class="icon">${data.detail.notes.icon}</span>
+                ${data.detail.notes.title}
+            </div>
+            <div class="section-content">
+                <ul>
+                    ${data.detail.notes.items.map(item => `<li>${item}</li>`).join('')}
+                </ul>
+            </div>
+        </div>
+    `;
+    
+    detailHTML += `<button class="back-btn" onclick="showBasicInfo('transport')"><span class="arrow">←</span> 基本情報に戻る</button>`;
+    
+    detailedEl.innerHTML = detailHTML;
+}
+
+// 詳細情報を表示
+function showDetailedInfo(cardType) {
+    const basicEl = document.getElementById(`basic-${cardType}`);
+    const detailedEl = document.getElementById(`detailed-${cardType}`);
+    
+    // 基本情報をフェードアウト
+    basicEl.classList.add('fade-out');
+    
+    setTimeout(() => {
+        basicEl.style.display = 'none';
+        detailedEl.classList.remove('hidden');
+        detailedEl.classList.add('fade-in');
+    }, 200);
+}
+
+// 基本情報に戻る
+function showBasicInfo(cardType) {
+    const basicEl = document.getElementById(`basic-${cardType}`);
+    const detailedEl = document.getElementById(`detailed-${cardType}`);
+    
+    // 詳細情報をフェードアウト
+    detailedEl.classList.remove('fade-in');
+    detailedEl.classList.add('hidden');
+    
+    setTimeout(() => {
+        basicEl.style.display = 'block';
+        basicEl.classList.remove('fade-out');
+    }, 200);
+}
+
+// シンプルなカード更新関数（他のカード用）
+function updateSimpleCard(cardType, data) {
     const summaryEl = document.getElementById(`summary-${cardType}`);
     const detailEl = document.getElementById(`detail-${cardType}`);
     
@@ -389,7 +897,7 @@ function updateEmergencyButtons(emergency) {
 accordionCards.forEach(card => {
     card.addEventListener('click', function(e) {
         // リンククリックの場合は無視
-        if (e.target.tagName === 'A') return;
+        if (e.target.tagName === 'A' || e.target.tagName === 'BUTTON') return;
         
         const isActive = this.classList.contains('active');
         
