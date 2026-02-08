@@ -1,0 +1,29 @@
+{
+  "name": "TripReady - 旅行前のモヤモヤ解消",
+  "short_name": "TripReady",
+  "description": "国・都市を選ぶだけで旅行準備が完了。ビザ、SIM、通貨、配車アプリなど必要な情報を一画面に整理。",
+  "version": "2.0.0",
+  "start_url": "/TripReady/?v=final",
+  "scope": "/TripReady/",
+  "display": "standalone",
+  "background_color": "#667eea",
+  "theme_color": "#667eea",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["travel", "lifestyle", "productivity"],
+  "lang": "ja",
+  "dir": "ltr"
+}
