@@ -1,0 +1,71 @@
+[
+    {
+        "id": "thailand",
+        "nameEn": "Thailand",
+        "nameJa": "タイ",
+        "flag": "🇹🇭",
+        "active": true,
+        "dataFile": "thailand.json",
+        "emergency": {
+            "police": "tel:191",
+            "policeNum": "191",
+            "ambulance": "tel:1669",
+            "ambulanceNum": "1669",
+            "embassy": "https://www.th.emb-japan.go.jp/",
+            "embassyNum": "☎"
+        }
+    },
+    {
+        "id": "korea",
+        "nameEn": "Korea",
+        "nameJa": "韓国",
+        "flag": "🇰🇷",
+        "active": true,
+        "dataFile": "korea.json",
+        "emergency": {
+            "police": "tel:112",
+            "policeNum": "112",
+            "ambulance": "tel:119",
+            "ambulanceNum": "119",
+            "embassy": "https://www.kr.emb-japan.go.jp/",
+            "embassyNum": "☎"
+        }
+    },
+    {
+        "id": "vietnam",
+        "nameEn": "Vietnam",
+        "nameJa": "ベトナム",
+        "flag": "🇻🇳",
+        "active": true,
+        "dataFile": "vietnam.json",
+        "emergency": {
+            "police": "tel:113",
+            "policeNum": "113",
+            "ambulance": "tel:115",
+            "ambulanceNum": "115",
+            "embassy": "https://www.vn.emb-japan.go.jp/",
+            "embassyNum": "☎"
+        }
+    },
+    {
+        "id": "singapore",
+        "nameEn": "Singapore",
+        "nameJa": "シンガポール",
+        "flag": "🇸🇬",
+        "active": false
+    },
+    {
+        "id": "taiwan",
+        "nameEn": "Taiwan",
+        "nameJa": "台湾",
+        "flag": "🇹🇼",
+        "active": false
+    },
+    {
+        "id": "malaysia",
+        "nameEn": "Malaysia",
+        "nameJa": "マレーシア",
+        "flag": "🇲🇾",
+        "active": false
+    }
+]
